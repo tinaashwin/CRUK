@@ -95,6 +95,16 @@ public class DonationPage {
 	@FindBy(id = "onetrust-accept-btn-handler")
 	private WebElement alert;
 
+	@FindBy(xpath = "//*[@id=\"main\"]/div[2]/div[1]/div/h2")
+	private WebElement finalPage;
+
+	@FindBy(xpath = "//*[@id=\"donationAmount-error\"]/p")
+	private WebElement amountValidationMsg;
+
+	public WebElement getAmountValidationMsg() {
+		return amountValidationMsg;
+	}
+
 	public WebElement getChooseType() {
 		return chooseType;
 	}
@@ -200,6 +210,14 @@ public class DonationPage {
 	}
 
 	public WebElement getCardholderName() {
+		return cardholderName;
+	}
+
+	public WebElement getFinalPage() {
+		return finalPage;
+	}
+
+	public WebElement g() {
 		return cardholderName;
 	}
 }

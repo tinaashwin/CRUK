@@ -7,7 +7,7 @@ package pageObjects;
  *
  */
 public class Donor {
-	private float amount;
+	private String amount;
 	private String donationType;
 	private String motivation;
 	private String cancerType;
@@ -28,11 +28,11 @@ public class Donor {
 		super();
 	}
 
-	public float getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 
-	public void setAmount(float amount) {
+	public void setAmount(String amount) {
 		this.amount = amount;
 	}
 
