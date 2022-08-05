@@ -71,7 +71,7 @@ public class DonationPage {
 	@FindBy(id = "credit-card-number")
 	private WebElement cardNumber;
 
-	@FindBy(xpath = "//*[@name=\"braintree-hosted-field-number\"]")
+	@FindBy(xpath = "//*[@id=\"braintree-hosted-field-number\"]")
 	private WebElement iframe;
 
 	@FindBy(id = "braintree-hosted-field-expirationDate")

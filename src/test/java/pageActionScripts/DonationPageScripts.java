@@ -1,4 +1,4 @@
-package pageAction_Scripts;
+package pageActionScripts;
 
 import static common.Utils.explicitWait;
 import static common.Utils.jsCLick;
@@ -6,7 +6,9 @@ import static common.Utils.jsCLick;
 import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -88,9 +90,7 @@ public class DonationPageScripts extends PageScripts {
 
 		/// Payment page
 		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getSelectCard());
-		explicitWait(getDriver(), donationLocators.getCardholderName(), 10);
-		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getCardholderName());
-		donationLocators.getCardholderName().sendKeys(data.getFirstname());
+		explicitWait(getDriver(), donationLocators.getiFrame(), 12);
 		getDriver().switchTo().frame(donationLocators.getiFrame());
 		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getCardNumber());
 		donationLocators.getCardNumber().sendKeys(data.getCardNumber());
@@ -103,6 +103,8 @@ public class DonationPageScripts extends PageScripts {
 		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getCvv());
 		donationLocators.getCvv().sendKeys(data.getCvv());
 		getDriver().switchTo().defaultContent();
+		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getCardholderName());
+		donationLocators.getCardholderName().sendKeys(data.getFirstname());
 		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getGiftaid());
 		jsCLick((JavascriptExecutor) getDriver(), donationLocators.getSubmit());
 
