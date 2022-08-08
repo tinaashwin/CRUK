@@ -44,7 +44,7 @@ public class PageScripts {
 
 	private static final String TEST_DATA_JSON = "test_data_json";
 
-	private static final String CONFIG_PROPERTIES = "config.properties";
+	private static final String CONFIG_PROPERTIES = System.getProperty("user.dir") + "/src/test/java/config.properties";
 
 	private Properties prop;
 
@@ -56,9 +56,11 @@ public class PageScripts {
 
 	public PageScripts() throws IOException {
 		super();
+
+		FileInputStream fin = new FileInputStream(CONFIG_PROPERTIES);
 		prop = new Properties();
-		URL url = this.getClass().getClassLoader().getResource(CONFIG_PROPERTIES);
-		prop.load(new FileInputStream(url.getFile()));
+
+		prop.load(fin);
 	}
 
 	/**
