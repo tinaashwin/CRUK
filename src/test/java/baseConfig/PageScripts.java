@@ -70,8 +70,11 @@ public class PageScripts {
 	 */
 	public void initializeDriver() throws IOException {
 
-		System.setProperty("webdriver.chrome.driver",
-				this.getClass().getClassLoader().getResource(prop.getProperty("driver")).getPath());
+		if (!Boolean.valueOf(prop.getProperty("mac"))) {
+
+			System.setProperty("webdriver.chrome.driver",
+					this.getClass().getClassLoader().getResource(prop.getProperty("driver")).getPath());
+		}
 		driver = new ChromeDriver();
 	}
 
