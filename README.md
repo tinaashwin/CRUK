@@ -12,4 +12,7 @@ To Run:
 5. Execute by running the command "mvn test" on the terminal
 6. A report will be generated under Report folder
 
- 
+ For MAC
+ 1. Make sure mac flag is set to true in the config.properties
+ 2. Download the chromedriver for mac by checking your chrome version and move to usr/local/bin folder
+(For reference : https://www.swtestacademy.com/install-chrome-driver-on-mac/)
